@@ -1,0 +1,26 @@
+{% extends 'mailing/base.html' %}
+{% load my_tags %}
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <form method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <div class="d-grid gap-2">
+                            {% if user.is_authenticated %}
+                                <button type="submit" class="btn btn-primary">Сохранить</button>
+                                <a href="{% url 'mailing:home_page' %}" class="btn btn-secondary">Отмена</a>
+                            {% else %}
+                                <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
+                            {% endif %}
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
