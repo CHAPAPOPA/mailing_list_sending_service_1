@@ -88,4 +88,4 @@ python manage.py runserver
 
 - [GitHub](https://github.com/CHAPAPOPA)
 - [Telegram](https://t.me/CHAPAPOPA)
-- [Email](yackow.muliawin2015@yandex.ru)
+- [Email](mailto:yackow.muliawin2015@yandex.ru)

@@ -196,7 +196,7 @@
             <div class="col-lg-6 col-md-8 mx-auto">
                 <h1 class="fw-light">Рассылка писем</h1>
                 {% if user.is_authenticated %}
-                <p class="lead text-body-secondary">Добро пожаловать, {{ user.username }}!</p>
+                <p class="lead text-body-secondary">Добро пожаловать, {{ user.email }}!</p>
                 {% if not perms.mailing.can_disable_newsletter and not perms.users.can_disable_user %}
                 <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
                     <a href="{% url 'mailing:newsletter_create' %}" class="btn btn-primary my-2">Создать рассылку</a>
