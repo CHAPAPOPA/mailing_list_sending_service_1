@@ -32,22 +32,27 @@
         </div>
     </div>
 </div>
-<div class="album py-5 bg-body-tertiary">
-    <div class="container">
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-            {% for obj in blog %}
-            <div class="col">
-                <div class="card-body">
-                    {% if obj.image %}
-                    <img src="{{ obj.image | media_filter }}">
-                    {% endif %}
-                    <h2 class="card-text">{{ obj.title }}</h2>
-                    <h3 class="card-text">{{ obj.content | truncatewords:50 }}</h3>
-                </div>
+
+<div class="row text-center">
+    <h4 class="text header mb-3"> Может быть интересно: </h4>
+</div>
+
+<div class="row">
+    {% for obj in blog %}
+    <div class="col-4 col-xs-12">
+        <div class="card mb-3 box-shadow">
+            <img src="{{ obj.image | media_filter }}" class="rounded float-start">
+            <div class="card-header">
+                <h5 class="my-0 font-weight-normal">{{ obj.title }}</h5>
             </div>
-            {% endfor %}
+            <div class="card-body">
+                <p class="card-text">{{ obj.content|truncatechars:100 }}</p>
+                <p class="card-text">Дата: {{ obj.created_at}}</p>
+                <p class="card-text">Просмотров: {{ obj.views_count }}</p>
+            </div>
         </div>
     </div>
+    {% endfor %}
 </div>
 {% endif %}
 {% endblock %}
