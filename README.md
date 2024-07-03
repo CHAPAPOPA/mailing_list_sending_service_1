@@ -1,4 +1,4 @@
-# :page_with_curl: Сервис рассылки писем
+# :page_with_curl: Сервис рассылки писем №1 (crontab)
 
 ## Описание
 
@@ -54,6 +54,11 @@ python manage.py migrate
 python manage.py csu
 ```
 
+Загрузите фикстуры 
+```bash
+python manage.py loaddata fixture/groups.json
+```
+
 ## Запуск программы
 
 ### Сервер сайта
@@ -61,6 +66,7 @@ python manage.py csu
 ```bash
 python manage.py runserver
 ```
+
 
 ## Как пользоваться сервисом
 
