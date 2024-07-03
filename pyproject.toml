@@ -7,7 +7,6 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.12"
-django = "^5.0.6"
 python-dotenv = "^1.0.1"
 psycopg-binary = "^3.1.19"
 django-crontab = "^0.7.1"
@@ -19,7 +18,12 @@ django-phonenumber-field = "^8.0.0"
 django-phonenumbers = "^1.0.1"
 psycopg2-binary = "^2.9.9"
 pytils = "^0.4.1"
+django = "4.2.2"
 
+
+[tool.poetry.group.lint.dependencies]
+black = "^24.4.2"
+flake8 = "^7.1.0"
 
 [build-system]
 requires = ["poetry-core"]
